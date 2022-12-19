@@ -11,3 +11,6 @@ https://asciinema.org/a/00eAXIsf38kLsMGMsitFMc7XE
 
 How to play "brain-gcd":
 https://asciinema.org/a/arPLE8fzkhBQAu6gyIH5tlZ8c
+
+How to play "brain-progression":
+https://asciinema.org/a/0wDWy6usSl7u4wARMspfBjpyD
