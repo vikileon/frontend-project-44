@@ -5,12 +5,6 @@ export function askUserName() {
   console.log(`Hello, ${userName}!`);
 }
 
-// сначала напишу функцию make progression, которую можно будет
-// вынести в отдельный файл и для каждого захода игры генерировать новую прогрессию
-
-// сначала создаем массив, начинающийся с рандомного числа.
-// каждый последующий элемент массива будет больше предыдущего на случайное число (от 1 до 10)
-
 export function makeProgression() {
   const firstNumber = Math.round(Math.random() * (10 - 1) + 1);
   const difference = Math.round(Math.random() * (10 - 1) + 1);
@@ -25,6 +19,21 @@ export function makeProgression() {
 
   return progression;
 }
-// уже непосредственно в файле с игрой программа будет вытаскивать случайный элемент массива
-// (чтобы сравнивать с ним ответ игрока)
-// и заменять его на '..'
+
+export function isPrime() {
+  const randomNumber = Math.round(Math.random() * (100 - 1) + 1);
+  let result = 'yes';
+
+  if (randomNumber === 1) {
+    result = 'yes';
+  } else if (randomNumber > 1) {
+    for (let i = 2; i < randomNumber; i++) {
+      if (randomNumber % i === 0) {
+        result = 'no'
+      } else {
+        result = 'yes'
+      }
+    }
+  }
+  return result;
+}
