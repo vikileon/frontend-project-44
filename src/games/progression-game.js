@@ -6,7 +6,7 @@ const progressionGame = () => {
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${userName}!`);
 
-  console.log('What number is missing in the progression??');
+  console.log('What number is missing in the progression?');
   let correctAnswers = 0;
   for (let i = 0; i <= 2; i += 1) {
     const newProgression = makeProgression();
