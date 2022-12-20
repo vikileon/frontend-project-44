@@ -8,7 +8,7 @@ const calcGame = () => {
   console.log('What is the result of the expression?');
   let correctAnswers = 0;
   const operators = ['+', '-', '*'];
-  let result;
+  let correctAnswer;
   let questionForUser;
 
   for (let i = 0; i <= 2; i += 1) {
@@ -19,24 +19,24 @@ const calcGame = () => {
 
     switch (operator) {
       case '-':
-        result = firstNumber - secondNumber;
+        correctAnswer = String(firstNumber - secondNumber);
         questionForUser = `${firstNumber} - ${secondNumber}`;
         break;
       case '*':
-        result = firstNumber * secondNumber;
+        correctAnswer = String(firstNumber * secondNumber);
         questionForUser = `${firstNumber} * ${secondNumber}`;
         break;
       default:
-        result = firstNumber + secondNumber;
+        correctAnswer = String(firstNumber + secondNumber);
         questionForUser = `${firstNumber} + ${secondNumber}`;
     }
     console.log(`Question: ${questionForUser}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (Number(userAnswer) === result) {
+    if (userAnswer === correctAnswer) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
   }
 
