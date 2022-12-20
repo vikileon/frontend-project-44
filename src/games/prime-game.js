@@ -10,14 +10,14 @@ const primeGame = () => {
 
   for (let i = 0; i <= 2; i += 1) {
     const questionForUser = getRandomNumber(1, 100);
-    let result = 'yes';
+    let correctAnswer = 'yes';
 
     if (questionForUser === 1) {
-      result = 'yes';
+      correctAnswer = 'yes';
     } else if (questionForUser > 1) {
       for (let n = 2; n < questionForUser; n += 1) {
         if (questionForUser % n === 0) {
-          result = 'no';
+          correctAnswer = 'no';
           break;
         }
       }
@@ -26,11 +26,11 @@ const primeGame = () => {
     console.log(`Question: ${questionForUser}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === result) {
+    if (userAnswer === correctAnswer) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
   }
 
