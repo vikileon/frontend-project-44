@@ -36,12 +36,13 @@ const gcdGame = () => {
 
     console.log(`Question: ${questionForUser}`);
     const userAnswer = readlineSync.question('Your answer: ');
+    const correctAnswer = String(nod);
 
-    if (Number(userAnswer) === nod) {
+    if (userAnswer === correctAnswer) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${nod}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
   }
 
