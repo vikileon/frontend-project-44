@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
+import getRandomNumber from '../getRandomNumber.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export function primeGame() {
+const primeGame = () => {
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${userName}!`);
 
@@ -9,26 +9,28 @@ export function primeGame() {
   let correctAnswers = 0;
 
   for (let i = 0; i <= 2; i += 1) {
-    const randomNumber = Math.round(Math.random() * (100 - 1) + 1);
+    const questionForUser = getRandomNumber(1, 100);
     let result = 'yes';
 
-    if (randomNumber === 1) {
+    if (questionForUser === 1) {
       result = 'yes';
-    } else if (randomNumber > 1) {
-      for (let n = 2; n < randomNumber; n += 1) {
-        if (randomNumber % n === 0) {
+    } else if (questionForUser > 1) {
+      for (let n = 2; n < questionForUser; n += 1) {
+        if (questionForUser % n === 0) {
           result = 'no';
           break;
         }
       }
     }
-    const yourAnswer = readlineSync.question(`Question: ${randomNumber} \nYour answer: `);
 
-    if (yourAnswer === result) {
+    console.log(`Question: ${questionForUser}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === result) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
     }
   }
 
@@ -37,4 +39,6 @@ export function primeGame() {
   } else {
     console.log('Sorry, you lose :(');
   }
-}
+};
+
+export default primeGame;
