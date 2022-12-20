@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import { makeProgression } from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
+import makeProgression from '../makeProgression.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export function progressionGame() {
+const progressionGame = () => {
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${userName}!`);
 
@@ -10,16 +10,18 @@ export function progressionGame() {
   let correctAnswers = 0;
   for (let i = 0; i <= 2; i += 1) {
     const newProgression = makeProgression();
-    const position = Math.round(Math.random() * ((newProgression.length - 1) - 1) + 1);
+    const position = getRandomNumber(1, newProgression.length - 1);
     const missingNumber = newProgression[position];
     newProgression[position] = '..';
-    const yourAnswer = readlineSync.question(`Question: ${newProgression} \nYour answer: `);
+    const questionForUser = newProgression;
+    console.log(`Question: ${questionForUser}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (Number(yourAnswer) === missingNumber) {
+    if (Number(userAnswer) === missingNumber) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${missingNumber}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${missingNumber}'.\nLet's try again, ${userName}!`);
     }
   }
 
@@ -28,4 +30,6 @@ export function progressionGame() {
   } else {
     console.log('Sorry, you lose :(');
   }
-}
+};
+
+export default progressionGame;
