@@ -10,23 +10,22 @@ const evenGame = () => {
 
   for (let i = 0; i <= 2; i += 1) {
     const questionForUser = getRandomNumber(1, 100);
+    let correctAnswer;
+
+    if (questionForUser % 2 === 0) {
+      correctAnswer = 'yes';
+    } else {
+      correctAnswer = 'no';
+    }
+
     console.log(`Question: ${questionForUser}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (questionForUser % 2 === 0) {
-      if (userAnswer === 'yes') {
-        correctAnswers += 1;
-        console.log('Correct!');
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
-      }
-    } else if (questionForUser % 2 !== 0) {
-      if (userAnswer === 'no') {
-        correctAnswers += 1;
-        console.log('Correct!');
-      } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
-      }
+    if (userAnswer === correctAnswer) {
+      correctAnswers += 1;
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
   }
 
