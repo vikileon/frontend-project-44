@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
+import getRandomNumber from '../getRandomNumber.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export function gcdGame() {
+const gcdGame = () => {
   const userName = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${userName}!`);
 
@@ -10,8 +10,8 @@ export function gcdGame() {
   let questionForUser;
 
   for (let i = 0; i <= 2; i += 1) {
-    const firstNumber = Math.round(Math.random() * (100 - 1) + 1);
-    const secondNumber = Math.round(Math.random() * (100 - 1) + 1);
+    const firstNumber = getRandomNumber(1, 100);
+    const secondNumber = getRandomNumber(1, 100);
 
     questionForUser = `Question: ${firstNumber} ${secondNumber}`;
     let nod;
@@ -34,12 +34,14 @@ export function gcdGame() {
       }
     }
 
-    const yourAnswer = readlineSync.question(`Question: ${questionForUser} \nYour answer: `);
-    if (Number(yourAnswer) === nod) {
+    console.log(`Question: ${questionForUser}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (Number(userAnswer) === nod) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${nod}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${nod}'.\nLet's try again, ${userName}!`);
     }
   }
 
@@ -48,4 +50,6 @@ export function gcdGame() {
   } else {
     console.log('Sorry, you lose :(');
   }
-}
+};
+
+export default gcdGame;
