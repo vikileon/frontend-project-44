@@ -9,7 +9,7 @@ const progressionData = () => {
   const position = getRandomNumber(1, newProgression.length - 1);
   const missingNumber = newProgression[position];
   newProgression[position] = '..';
-  const questionForUser = newProgression;
+  const questionForUser = newProgression.join(' ');
 
   const correctAnswer = String(missingNumber);
 
