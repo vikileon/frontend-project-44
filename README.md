@@ -22,20 +22,20 @@ To install Brain Games, use the following commands:
 
 <b>How to play:</b>
 
-<p>Every game has 3 rounds. You have to give correct answer at least 2 times to win.</p>
+<p>Every game has 3 rounds. You have to give correct answer three times to win.</p>
 <p>To start any game, write down its’ name in your command line and press ‘Enter’.</p>
 
 <p>1. <b>Brain-even</b> – answer if the number is even.</p>
-<p><a href="https://asciinema.org/a/VTsaLBqKZqDpffDe869AOqg8T" target="_blank"><img src="https://asciinema.org/a/VTsaLBqKZqDpffDe869AOqg8T.svg" /></a></p>
+<p><a href="https://asciinema.org/a/AfMluIJzAtRiCxjMBo1W1llcg" target="_blank"><img src="https://asciinema.org/a/AfMluIJzAtRiCxjMBo1W1llcg.svg" /></a></p>
 
 <p>2. <b>Brain-calc</b> – calculate the value of the expression.</p>
-<p><a href="https://asciinema.org/a/SrlgN5iwUWBG1t9CwxasgVdyD" target="_blank"><img src="https://asciinema.org/a/SrlgN5iwUWBG1t9CwxasgVdyD.svg" /></a></p>
+<p><a href="https://asciinema.org/a/nLhrvW8le1YnfsO0SSUMksWKn" target="_blank"><img src="https://asciinema.org/a/nLhrvW8le1YnfsO0SSUMksWKn.svg" /></a></p>
 
 <p>3. <b>Brain-gcd</b> – find the greatest common divisor for two numbers.</p>
-<p><a href="https://asciinema.org/a/TTypjHRfatApypeVKwWJPryk5" target="_blank"><img src="https://asciinema.org/a/TTypjHRfatApypeVKwWJPryk5.svg" /></a></p>
+<p><a href="https://asciinema.org/a/aviLOLI40DBClktD4jnwCuN8B" target="_blank"><img src="https://asciinema.org/a/aviLOLI40DBClktD4jnwCuN8B.svg" /></a></p>
 
 <p>4. <b>Brain-prime</b> – answer if the number is prime.</p>
-<p><a href="https://asciinema.org/a/BtlMRzT3TZoiWZTU5eycXghml" target="_blank"><img src="https://asciinema.org/a/BtlMRzT3TZoiWZTU5eycXghml.svg" /></a></p>
+<p><a href="https://asciinema.org/a/ADwXtrwnvsfos6WqxDDTQq0oR" target="_blank"><img src="https://asciinema.org/a/ADwXtrwnvsfos6WqxDDTQq0oR.svg" /></a></p>
 
 <p>5. <b>Brain-progression</b> – find the missing number in progression.</p>
-<p><a href="https://asciinema.org/a/C9BcU09JbmH51OJUXNox2ze2F" target="_blank"><img src="https://asciinema.org/a/C9BcU09JbmH51OJUXNox2ze2F.svg" /></a></p>
+<p><a href="https://asciinema.org/a/FgS0QQGxH98dJGoiw6OTCfMoy" target="_blank"><img src="https://asciinema.org/a/FgS0QQGxH98dJGoiw6OTCfMoy.svg" /></a></p>
