@@ -3,14 +3,16 @@
 
 <a href="https://codeclimate.com/github/vikileon/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/becf06779a2146e1a977/maintainability" /></a>
 
-Welcome to the Brain Games!
+<b>Welcome to the Brain Games!</b>
 Play five different mathematics games and check out your knowledges!
 
-Minimum requirements:
-–	Linux (Unix??)-like operating system
-–	Node.js v13 or higher
+<b>Minimum requirements:</b>
+<ul>
+<li>Unix-like operating system</li>
+<li>Node.js v13 or higher</li>
+</ul>
 
-How to install: 
+<b>How to install:</b>
 
 To install Brain Games, use the following commands:
 1. git clone https://github.com/vikileon/frontend-project-44
@@ -18,7 +20,7 @@ To install Brain Games, use the following commands:
 3. make install
 4. npm link
 
-How to play:
+<b>How to play:</b>
 
 Every game has 3 rounds. You have to give correct answer at least 2 times to win.
 To start any game, write down its’ name in your command line and press ‘Enter’.  
