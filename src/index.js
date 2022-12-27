@@ -7,22 +7,25 @@ const gameLogic = (gameDescription, gameData) => {
 
   console.log(gameDescription);
   let correctAnswers = 0;
-  for (let i = 1; i < 3; i += 1) {
+
+  for (let i = 1; i <= 3; i += 1) {
+    const [questionForUser, correctAnswer] = gameData();
+
     console.log(`Question: ${questionForUser}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === correctAnswer) {
-      console.log('Correct!')
+      console.log('Correct!');
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
+  }
 
-    if (correctAnswers >= 2) {
-      console.log(`Congratulations, ${userName}!`);
-    } else {
-      console.log('Sorry, you lose :(');
-    }
+  if (correctAnswers >= 2) {
+    console.log(`Congratulations, ${userName}!`);
+  } else {
+    console.log('Sorry, you lose :(');
   }
 };
 export default gameLogic;
