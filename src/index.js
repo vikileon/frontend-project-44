@@ -19,13 +19,12 @@ const gameLogic = (gameDescription, gameData) => {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
+      break;
     }
   }
 
-  if (correctAnswers >= 2) {
+  if (correctAnswers === 3) {
     console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log('Sorry, you lose :(');
   }
 };
 export default gameLogic;
