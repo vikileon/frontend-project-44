@@ -3,15 +3,14 @@ import gameLogic from '../index.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const gcdData = () => {
-  const firstNumber = getRandomNumber(1, 100);
-  const secondNumber = getRandomNumber(1, 100);
-
-  const questionForUser = `${firstNumber} ${secondNumber}`;
+const findGcd = (num1, num2) => {
+  if (num1 === num2) {
+    return num1;
+  }
 
   let gcd;
-  let a = firstNumber;
-  let b = secondNumber;
+  let a = num1;
+  let b = num2;
 
   if (a === b) {
     gcd = a;
@@ -28,7 +27,15 @@ const gcdData = () => {
       gcd = a;
     }
   }
-  const correctAnswer = String(gcd);
+
+  return gcd;
+};
+
+const gcdData = () => {
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
+  const correctAnswer = String(findGcd(num1, num2));
+  const questionForUser = `${num1} ${num2}`;
 
   return [questionForUser, correctAnswer];
 };

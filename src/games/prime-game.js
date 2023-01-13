@@ -3,20 +3,23 @@ import gameLogic from '../index.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const primeData = () => {
-  const questionForUser = getRandomNumber(1, 100);
-  let correctAnswer = 'yes';
+const isPrime = (num) => {
+  if (num === 1) {
+    return 'no';
+  }
 
-  if (questionForUser === 1) {
-    correctAnswer = 'yes';
-  } else {
-    for (let n = 2; n < questionForUser; n += 1) {
-      if (questionForUser % n === 0) {
-        correctAnswer = 'no';
-        break;
-      }
+  for (let n = 2; n < num / 2; n += 1) {
+    if (num % n === 0) {
+      return 'no';
     }
   }
+  return 'yes';
+};
+
+const primeData = () => {
+  const questionForUser = getRandomNumber(1, 100);
+  const correctAnswer = isPrime(questionForUser);
+
   return [questionForUser, correctAnswer];
 };
 

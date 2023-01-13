@@ -15,10 +15,12 @@
 <b>How to install:</b>
 
 To install Brain Games, use the following commands:
-1. git clone https://github.com/vikileon/frontend-project-44
-2. cd frontend-project-44
-3. make install
-4. npm link
+    
+    git clone https://github.com/vikileon/frontend-project-44
+    cd frontend-project-44
+    make install
+    npm link
+    
 
 <b>How to play:</b>
 
