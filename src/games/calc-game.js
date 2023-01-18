@@ -21,7 +21,7 @@ const calculate = (num1, num2, operator) => {
   }
 };
 
-const calcData = () => {
+const makeRound = () => {
   const num1 = getRandomNumber(1, 20);
   const num2 = getRandomNumber(1, 20);
   const operator = getRandomOperator();
@@ -32,8 +32,8 @@ const calcData = () => {
   return [questionForUser, correctAnswer];
 };
 
-const calcGame = () => {
-  gameLogic(gameDescription, calcData);
+const runCalcGame = () => {
+  gameLogic(gameDescription, makeRound);
 };
 
-export default calcGame;
+export default runCalcGame;

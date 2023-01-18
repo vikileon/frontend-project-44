@@ -3,35 +3,35 @@ import gameLogic from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const makeProgression = () => {
-  const firstNumber = getRandomNumber(1, 10);
-  const difference = getRandomNumber(1, 10);
+const makeProgression = (firstNumber, difference, length) => {
   const progression = [firstNumber];
-  const progressionLength = getRandomNumber(5, 10);
-  let nextNumber;
 
-  for (let i = 1; i < progressionLength; i += 1) {
-    nextNumber = progression[i - 1] + difference;
+  for (let i = 1; i < length; i += 1) {
+    const nextNumber = progression[i - 1] + difference;
     progression.push(nextNumber);
   }
 
   return progression;
 };
 
-const progressionData = () => {
-  const newProgression = makeProgression();
-  const position = getRandomNumber(1, newProgression.length - 1);
-  const missingNumber = newProgression[position];
-  newProgression[position] = '..';
-  const questionForUser = newProgression.join(' ');
+const makeRound = () => {
+  const firstNumber = getRandomNumber(1, 10);
+  const progressionDifference = getRandomNumber(1, 10);
+  const progressionLength = getRandomNumber(5, 10);
+  const progression = makeProgression(firstNumber, progressionDifference, progressionLength);
+
+  const position = getRandomNumber(1, progression.length - 1);
+  const missingNumber = progression[position];
+  progression[position] = '..';
+  const questionForUser = progression.join(' ');
 
   const correctAnswer = String(missingNumber);
 
   return [questionForUser, correctAnswer];
 };
 
-const progressionGame = () => {
-  gameLogic(gameDescription, progressionData);
+const runProgressionGame = () => {
+  gameLogic(gameDescription, makeRound);
 };
 
-export default progressionGame;
+export default runProgressionGame;

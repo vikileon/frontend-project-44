@@ -16,15 +16,15 @@ const isPrime = (num) => {
   return 'yes';
 };
 
-const primeData = () => {
+const makeRound = () => {
   const questionForUser = getRandomNumber(1, 100);
   const correctAnswer = isPrime(questionForUser);
 
   return [questionForUser, correctAnswer];
 };
 
-const primeGame = () => {
-  gameLogic(gameDescription, primeData);
+const runPrimeGame = () => {
+  gameLogic(gameDescription, makeRound);
 };
 
-export default primeGame;
+export default runPrimeGame;
