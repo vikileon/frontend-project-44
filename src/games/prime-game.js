@@ -5,20 +5,20 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 
 const isPrime = (num) => {
   if (num === 1) {
-    return 'no';
+    return false;
   }
 
   for (let n = 2; n < num / 2; n += 1) {
     if (num % n === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const makeRound = () => {
   const questionForUser = getRandomNumber(1, 100);
-  const correctAnswer = isPrime(questionForUser);
+  const correctAnswer = isPrime(questionForUser) ? 'yes' : 'no';
 
   return [questionForUser, correctAnswer];
 };
